@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>El Pastillero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Detalles del Medicamento</h1>
+  <ion-card *ngFor="let medication of medications; let i = index">
+    <ion-card-header>
+      <ion-card-title>{{ medication.medicationName }}</ion-card-title>
+      <ion-card-subtitle>Cantidad: {{ medication.quantity }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Horario: {{ medication.time }}</p>
+      <p>Días de la semana: {{ medication.days.join(', ') }}</p>
+    </ion-card-content>
+
+    <ion-button fill="clear" (click)="onDelete(i)">Eliminar</ion-button>
+  </ion-card>
+</ion-content>
+
+
+
+
+

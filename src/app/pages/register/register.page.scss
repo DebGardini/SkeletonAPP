@@ -1,0 +1,22 @@
+ion-content::part(background) {
+  background: #a8f8f8;
+}
+
+ion-content::part(scroll) {
+  color: #0e0d0d;
+}
+ion-header {
+    --background: var(--ion-color-primary);
+    --color: #fff;
+  }
+  
+  ion-content {
+    ion-item {
+      margin-bottom: 15px;
+    }
+  
+    ion-button {
+      margin-top: 20px;
+    }
+  }
+  

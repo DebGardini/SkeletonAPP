@@ -1,15 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>El Pastillero</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="center-content">
-    <h1>SkeletonAPP</h1>
+    <h1>El Pastillero</h1>
   </div>
   <div class="center-content1">
-    <p>Aquí comienza todo</p>
+    <p>Tu recordatorio día a día</p>
   </div>
   <div class="center-content2">
     <h3>¡Bienvenido!</h3>
@@ -17,16 +17,16 @@
 
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input formControlName="username" minlength="3" maxlength="8" required></ion-input>
+      <ion-label position="floating" for="username">Usuario</ion-label>
+      <ion-input id="username" formControlName="username" minlength="3" maxlength="8" required></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input formControlName="password" type="password" minlength="4" maxlength="4" inputmode="numeric" pattern="\d*" required></ion-input>
+      <ion-label position="floating" for="password">Contraseña</ion-label>
+      <ion-input id="password" formControlName="password" type="password" minlength="4" maxlength="4" inputmode="numeric" pattern="\d*" required></ion-input>
     </ion-item>
 
     <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="customBtn">INGRESAR</ion-button>
+    <ion-button expand="block" (click)="navigateToRegister()">Registrarse</ion-button>
   </form>
 </ion-content>
-

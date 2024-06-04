@@ -1,21 +1,24 @@
-.center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 7%;
-    
+ion-content::part(background) {
+  background: #a8f8f8;
 }
-.center-content1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 10%;
-    
+
+ion-content::part(scroll) {
+  color: #0e0d0d;
 }
-.center-content2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 10%;
-    
+.center-content h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.center-content1 p {
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.center-content2 h3 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 16px;
 }

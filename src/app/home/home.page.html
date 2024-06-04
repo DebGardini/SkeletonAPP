@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <div class="title-animation">SkeletonAPP</div>
+      <div class="title-animation">El Pastillero</div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,36 +11,67 @@
   <h3>Usuario: {{ username }}</h3>
   <h2>Información Adicional</h2>
 
-  <form [formGroup]="homeForm">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input formControlName="name" id="name" *ngIf="animateInputs; else normalInput1" @slideIn></ion-input>
-      <ng-template #normalInput1>
-        <ion-input formControlName="name" id="name"></ion-input>
-      </ng-template>
-    </ion-item>
+  <form [formGroup]="homeForm" (ngSubmit)="presentAlert()" [class.slide-in]="animateInputs">
+    <ion-grid>
+      <ion-row class="form-row">
+        <ion-col size="4">
+          <ion-label position="stacked">Nombre</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <ion-input formControlName="name" id="name" *ngIf="animateInputs; else normalInput1" @slideIn></ion-input>
+          <ng-template #normalInput1>
+            <ion-input formControlName="name" id="name"></ion-input>
+          </ng-template>
+        </ion-col>
+      </ion-row>
 
-    <ion-item>
-      <ion-label position="floating">Apellido</ion-label>
-      <ion-input formControlName="surname" id="surname" *ngIf="animateInputs; else normalInput2" @slideIn></ion-input>
-      <ng-template #normalInput2>
-        <ion-input formControlName="surname" id="surname"></ion-input>
-      </ng-template>
-    </ion-item>
+      <ion-row class="form-row">
+        <ion-col size="4">
+          <ion-label position="stacked">Apellido</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <ion-input formControlName="surname" id="surname" *ngIf="animateInputs; else normalInput2" @slideIn></ion-input>
+          <ng-template #normalInput2>
+            <ion-input formControlName="surname" id="surname"></ion-input>
+          </ng-template>
+        </ion-col>
+      </ion-row>
 
-    <ion-item>
-      <ion-label position="floating">Nivel de Educación</ion-label>
-      <ion-input formControlName="educationLevel"></ion-input>
-    </ion-item>
+      <ion-row class="form-row">
+        <ion-col size="4">
+          <ion-label position="stacked">Nivel de Educación</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <ion-select formControlName="educationLevel">
+            <ion-select-option value="basica_incompleta">Enseñanza Básica Incompleta</ion-select-option>
+            <ion-select-option value="basica_completa">Enseñanza Básica Completa</ion-select-option>
+            <ion-select-option value="media_incompleta">Enseñanza Media Incompleta</ion-select-option>
+            <ion-select-option value="media_completa">Enseñanza Media Completa</ion-select-option>
+            <ion-select-option value="superior_incompleta">Enseñanza Superior Incompleta</ion-select-option>
+            <ion-select-option value="superior_completa">Enseñanza Superior Completa</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
 
-    <ion-item>
-      <ion-label position="floating">Fecha de Nacimiento</ion-label>
-      <input matInput [matDatepicker]="picker" formControlName="birthDate">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </ion-item>
+      <ion-row class="form-row">
+        <ion-col size="4">
+          <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <input matInput [matDatepicker]="picker" formControlName="birthDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </ion-col>
+      </ion-row>
 
-    <ion-button expand="block" type="button" (click)="clearForm()">Limpiar</ion-button>
-    <ion-button expand="block" type="button" (click)="showInfo()">Mostrar</ion-button>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" type="button" (click)="clearForm()">Limpiar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" type="button" (click)="showInfo()">Mostrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 </ion-content>
