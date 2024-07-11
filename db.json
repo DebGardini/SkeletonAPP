@@ -1,0 +1,6 @@
+{
+    "Pastillas": [
+        {"id": 1, "name": "Paracetamol", "description": "no consumir más de 4 pastillas de 500 grs diario"},
+        {"id": 2, "name": "Ibuprofeno", "description": "no consumir más de 4 cucharadas de 5 ml diario"}
+    ]
+}

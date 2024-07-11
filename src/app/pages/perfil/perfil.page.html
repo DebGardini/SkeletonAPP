@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="user && user.length > 0">
+    <ion-item *ngFor="let pastilla of user">
+      <ion-label>{{ pastilla.name }}</ion-label>
+      <p>{{ pastilla.description }}</p>
+    </ion-item>
+  </ion-list>
+  <ion-spinner *ngIf="!user"></ion-spinner>
+</ion-content>
+
+

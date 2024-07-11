@@ -14,6 +14,18 @@ module.exports = function (config) {
     ],
     client: {
       jasmine: {
+        
+          "spec_dir": "spec",
+          "spec_files": [
+            "**/*[sS]pec.js"
+          ],
+          "helpers": [
+            "helpers/**/*.js"
+          ],
+          "stopSpecOnExpectationFailure": false,
+          "random": false
+        
+        
         // you can add configuration options for Jasmine here
         // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
         // for example, you can disable the random execution with `random: false`
