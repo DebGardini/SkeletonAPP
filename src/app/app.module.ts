@@ -62,6 +62,9 @@ import { AppComponent } from './app.component';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
+import { AuthService } from './services/auth.service';
+import { DatabaseService } from './services/database.service';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -80,8 +83,11 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite
+    SQLite,
+    AuthService,
+    DatabaseService
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

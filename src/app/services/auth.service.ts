@@ -63,7 +63,7 @@ import { DatabaseService } from './database.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = false;  // O alguna lógica para determinar si el usuario está autenticado
+  private loggedIn = false;  
 
   constructor(private db: DatabaseService) {}
 
@@ -75,7 +75,7 @@ export class AuthService {
   async login(username: string, password: string): Promise<any> {
     const user = await this.db.getUser(username);
     if (user && user.password === password) {
-      this.loggedIn = true; // Ajusta esta lógica según sea necesario
+      this.loggedIn = true; 
       return user;
     }
     return null;
@@ -85,4 +85,3 @@ export class AuthService {
     return this.loggedIn;
   }
 }
-

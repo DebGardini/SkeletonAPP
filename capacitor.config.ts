@@ -5,5 +5,3 @@ const config: CapacitorConfig = {
   appName: 'SkeletonAPP',
   webDir: 'www'
 };
-
-export default config;

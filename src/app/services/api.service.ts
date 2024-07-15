@@ -20,7 +20,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getPastillas(): Observable<Pastillas[]> {
-    return this.http.get<Pastillas[]>(this.apiUrl + '/pastillas').pipe(
+    return this.http.get<Pastillas[]>(this.apiUrl + '/Pastillas').pipe(
       retry(3),
       catchError(this.handleError)
     );

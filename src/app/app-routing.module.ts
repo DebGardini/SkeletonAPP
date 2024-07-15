@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuard]
+    
   },
   {
     path: '',
@@ -24,17 +24,23 @@ const routes: Routes = [
   {
     path: 'medication',
     loadChildren: () => import('./pages/medication/medication.module').then(m => m.MedicationPageModule),
-    canActivate: [AuthGuard]
+    
   },
   {
     path: 'medication-details',
     loadChildren: () => import('./pages/medication-details/medication-details.module').then(m => m.MedicationDetailsPageModule),
-    canActivate: [AuthGuard]
+    
   },
 
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    
+  },
+
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule),
     
   },
 
